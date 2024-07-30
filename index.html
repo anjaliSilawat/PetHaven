@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PetHaven</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="icon.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body >
+    <div class="flex flex-col min-h-screen" >
+        <nav class="bg-amber-600 flex items-center justify-between h-24 px-6 md:px-20 py-5 font-bold fixed w-full z-10">
+            <a href="index.html"><img alt="nav" src="icon.png" class="h-20 mx-5 my-5"></a>
+            <div class="block md:hidden">
+                <button id="menu-button" class="text-white focus:outline-none">
+                    <i class="fas fa-bars fa-2x"></i>
+                </button>
+            </div>
+            <ul id="nav-menu" class="hidden md:flex ml-auto space-x-4 md:space-x-7">
+                <li class="cursor-pointer hover:text-white"><a href="MeetPets.html">Meet Pets</a></li>
+                <li class="cursor-pointer hover:text-white"><a href="SupportUs.html">Support Us</a></li>
+                <li class="cursor-pointer hover:text-white"><a href="DonatePets.html">Donate</a></li>
+                <li class="cursor-pointer hover:text-white"><a href="Sos.html">SOS Report</a></li>
+                <li class="cursor-pointer hover:text-white"><a href="contact.html">Contact Us</a></li>
+            </ul>
+        </nav>
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="mobile-menu hidden">
+        <button class="close-btn" id="close-button">
+            <i class="fas fa-times text-white hover:text-orange-500 "></i>
+        </button>
+        <a href="MeetPets.html" class="hover:text-orange-500 text-2xl">Meet Pets</a>
+        <a href="SupportUs.html" class="hover:text-orange-500 text-2xl">Support Us</a>
+        <a href="DonatePets.html" class="hover:text-orange-500 text-2xl">Donate</a>
+        <a href="Sos.html" class="hover:text-orange-500 text-2xl">SOS Report</a>
+        <a href="contact.html" class="hover:text-orange-500 text-2xl">Contact Us</a>
+    </div>
+    
+        
+        <!-- main section  -->
+        <div id="content" class="content flex-grow pt-24">
+            <div class="relative">
+                <div id="slider">
+                    <figure>
+                        <img src="div1.jpg" alt="div1-img" class="w-full">
+                        <img src="div4.jpg" alt="div2-img" class="w-full">
+                        <img src="div5.jpg" alt="div3-img" class="w-full">
+                        <img src="div6.jpg" alt="div4-img" class="w-full">
+                    </figure>
+                </div>
+                <div class="absolute inset-0 flex flex-col items-center justify-center bg-black bg-opacity-50">
+                    <h1 class="text-6xl md:text-9xl font-bold font-serif text-orange-200 animate-bounce">PetHaven</h1>
+                    <p class="text-white mt-4 text-center px-4">Give life to an animal in need</p>
+                </div>
+                <hr class="w-1/2 md:w-1/6 mx-auto border-dotted border-zinc-200 border-4 md:border-6 border-b-0 animate-ping">
+            </div>
+        </div>
+        <!-- main section end  -->
+    
+        <!-- about us sec -->
+        <div class="pt-20 gradient-bg2 pb-20">
+            <div class="bg-white bg-opacity-50 rounded-lg mx-4 md:mx-32 p-6 md:p-10 mt-10 md:mt-20">
+                <h1 class="pt-10 pb-6 text-center text-5xl md:text-7xl text-gray-900 font-bold animate-pulse font-serif">About Us</h1>
+                <p class="pt-6 text-center text-lg md:text-3xl text-black">
+                    Our mission is to create a heartwarming platform that connects animal lovers with pets in need of forever homes, while also providing emergency medical care for stray animals in distress. We strive to make a positive impact by offering options to adopt, donate, and use our SOS feature to report stray animals needing immediate assistance. Together, we can make the world a kinder and better place for all our furry friends.
+                </p>
+            </div>
+        </div>
+        <!-- about us sec end -->
+    
+    
+    <!-- fotter sec start  -->
+        <footer class="bg-amber-600 mt-auto">
+            <hr class="w-1/2 md:w-1/6 mx-auto border-dotted border-zinc-200 border-4 md:border-6 border-b-0 animate-ping">
+            <h1 class="text-center text-xl md:text-2xl font-bold pt-5">Get in Touch</h1>
+            <div class="flex justify-center space-x-4 text-2xl py-2">
+                <a href="https://instagram.com" class="text-black hover:text-white">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://facebook.com" class="text-black hover:text-white">
+                    <i class="fa-brands fa-facebook"></i>
+                </a>
+                <a href="https://github.com" class="text-black hover:text-white">
+                    <i class="fa-brands fa-github"></i>
+                </a>
+            </div>
+            <p class="text-center py-2 text-sm md:text-base">Copyright © 2024 PetHaven All Rights Reserved.</p>
+    
+        </footer>
+    
+        <script>
+            const menuButton = document.getElementById('menu-button');
+            const closeButton = document.getElementById('close-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+    
+            menuButton.addEventListener('click', () => {
+                mobileMenu.style.display = 'flex';
+            });
+    
+            closeButton.addEventListener('click', () => {
+                mobileMenu.style.display = 'none';
+            });
+        </script>
+    </div>
+</body>
+
+</html>

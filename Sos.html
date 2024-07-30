@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SOS Report</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="icon.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="flex flex-col min-h-screen">
+        <nav class="bg-amber-600 flex items-center justify-between h-24 px-6 md:px-20 py-5 font-bold fixed w-full z-20">
+            <a href="index.html"><img alt="nav" src="icon.png" class="h-20 mx-5 my-5"></a>
+            <div class="block md:hidden">
+                <button id="menu-button" class="text-white focus:outline-none">
+                    <i class="fas fa-bars fa-2x"></i>
+                </button>
+            </div>
+            <ul id="nav-menu" class="hidden md:flex ml-auto space-x-4 md:space-x-7">
+                <li class="cursor-pointer hover:text-white"><a href="MeetPets.html">Meet Pets</a></li>
+                <li class="cursor-pointer hover:text-white"><a href="SupportUs.html">Support Us</a></li>
+                <li class="cursor-pointer hover:text-white"><a href="DonatePets.html">Donate</a></li>
+                <li class="cursor-pointer hover:text-white"><a href="Sos.html">SOS Report</a></li>
+                <li class="cursor-pointer hover:text-white"><a href="contact.html">Contact Us</a></li>
+            </ul>
+        </nav>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="mobile-menu hidden">
+            <button class="close-btn" id="close-button">
+                <i class="fas fa-times text-white hover:text-orange-500 "></i>
+            </button>
+            <a href="MeetPets.html" class="hover:text-orange-500 text-2xl">Meet Pets</a>
+            <a href="SupportUs.html" class="hover:text-orange-500 text-2xl">Support Us</a>
+            <a href="DonatePets.html" class="hover:text-orange-500 text-2xl">Donate</a>
+            <a href="Sos.html" class="hover:text-orange-500 text-2xl">SOS Report</a>
+            <a href="contact.html" class="hover:text-orange-500 text-2xl">Contact Us</a>
+        </div>
+        
+
+ <!-- Container for the form -->
+<div class="min-h-screen flex items-center justify-center bg-gray-100 pt-32 pb-10 px-4 sm:px-6 lg:px-8">
+    <!-- Form Overlay -->
+    <div class="bg-orange-200 bg-opacity-50 rounded-lg p-6 sm:p-8 md:p-10 lg:p-12 shadow-lg w-full max-w-lg md:max-w-xl lg:max-w-2xl">
+        <h2 class="text-3xl sm:text-3xl md:text-4xl font-bold text-center mb-2 font-serif animate-pulse">Report any Critical stray animal to the nearest Animal Care centres</h2>
+        <h3 class="text-sm sm:text-base md:text-lg text-center mb-6 font-serif">The details you provide with this form will be used to reach the nearest authority at the location of the stray animal.</h3>
+        <form id="reportForm" class="space-y-4">
+            <div>
+                <label for="name" class="block text-gray-700 font-bold mb-2">Name <span class="text-red-500">*</span></label>
+                <input type="text" id="name" name="name" placeholder="Enter your name" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-amber-600" required>
+            </div>
+            <div>
+                <label for="email" class="block text-gray-700 font-bold mb-2">Email <span class="text-red-500">*</span></label>
+                <input type="email" id="email" name="email" placeholder="Enter your email" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-amber-600" required>
+            </div>
+            <div>
+                <label for="address" class="block text-gray-700 font-bold mb-2">Address (street address, City, pincode) <span class="text-red-500">*</span></label>
+                <input type="text" id="address" name="address" placeholder="Enter your correct address (eg. Meenawati marg, Lucknow, 209087)" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-amber-600" required>
+            </div>
+            <div>
+                <label for="landmark" class="block text-gray-700 font-bold mb-2">Landmark <span class="text-red-500">*</span></label>
+                <input type="text" id="landmark" name="landmark" placeholder="Enter the nearest landmark to identify the location." class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-amber-600" required>
+            </div>
+            <div>
+                <label for="contactNumber" class="block text-gray-700 font-bold mb-2">Contact number <span class="text-red-500">*</span></label>
+                <input type="text" id="contactNumber" name="contactNumber" placeholder="Enter an active contact number" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-amber-600" required>
+            </div>
+            <div>
+                <label for="animalType" class="block text-gray-700 font-bold mb-2">Which type of stray animal? <span class="text-red-500">*</span></label>
+                <select id="animalType" name="animalType" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-amber-600" required>
+                    <option value="" disabled selected>Select stray animal</option>
+                    <option value="dog">Dog</option>
+                    <option value="cat">Cat</option>
+                    <option value="bird">Bird</option>
+                    <option value="other">Other</option>
+                </select>
+            </div>
+            <div>
+                <label class="block text-gray-700 font-bold mb-2">What is the condition of the animal currently?</label>
+                <div class="space-y-2">
+                    <label class="inline-flex items-center">
+                        <input type="radio" name="condition" value="extremelyCritical" class="form-radio text-amber-600" required>
+                        <span class="ml-2">Extremely Critical</span>
+                    </label>
+                    <label class="inline-flex items-center">
+                        <input type="radio" name="condition" value="critical" class="form-radio text-amber-600">
+                        <span class="ml-2">Critical</span>
+                    </label>
+                    <label class="inline-flex items-center">
+                        <input type="radio" name="condition" value="moderateHealth" class="form-radio text-amber-600">
+                        <span class="ml-2">Moderate health</span>
+                    </label>
+                </div>
+            </div>
+            <div>
+                <label for="additionalInfo" class="block text-gray-700 font-bold mb-2">Would you like to share any additional information about the stray animal's condition?</label>
+                <textarea id="additionalInfo" name="additionalInfo" placeholder="Enter your comment here..." class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-amber-600"></textarea>
+            </div>
+            <div class="flex justify-center items-center">
+                <button type="submit" class="bg-amber-600 hover:bg-amber-500 text-white font-bold py-2 px-4 rounded-lg animate-bounce">Submit</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<script>
+    document.getElementById('reportForm').addEventListener('submit', function(event) {
+        event.preventDefault(); // Prevent the default form submission
+        alert('Form submitted successfully!');
+    });
+</script>
+
+
+<!-- footer start  -->
+<footer class="bg-amber-600 mt-auto">
+    <hr class="w-1/2 md:w-1/6 mx-auto border-dotted border-zinc-200 border-4 md:border-6 border-b-0 animate-ping">
+    <h1 class="text-center text-xl md:text-2xl font-bold pt-5">Get in Touch</h1>
+    <div class="flex justify-center space-x-4 text-2xl py-2">
+    <a href="https://instagram.com" class="text-black hover:text-white">
+        <i class="fab fa-instagram"></i>
+    </a>
+    <a href="https://facebook.com" class="text-black hover:text-white">
+        <i class="fa-brands fa-facebook"></i>
+    </a>
+    <a href="https://github.com" class="text-black hover:text-white">
+        <i class="fa-brands fa-github"></i>
+    </a>
+    </div>
+    <p class="text-center py-2 text-sm md:text-base">Copyright © 2024 PetHaven All Rights Reserved.</p>
+    </footer>
+    
+    <script>
+    const menuButton = document.getElementById('menu-button');
+    const closeButton = document.getElementById('close-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+    
+    menuButton.addEventListener('click', () => {
+    mobileMenu.style.display = 'flex';
+    });
+    
+    closeButton.addEventListener('click', () => {
+    mobileMenu.style.display = 'none';
+    });
+    </script>
+    
+    </div>
+    </body>
+    
+    </html>
+    

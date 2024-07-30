@@ -1,0 +1,160 @@
+@import 'base';
+@import 'components';
+@import ' utilities ';
+/* Keyframes for slider animation */
+@keyframes slidy {
+  0%, 20% { left: 0%; }
+  25%, 45% { left: -100%; }
+  50%, 70% { left: -200%; }
+  75%, 95% { left: -300%; }
+  100% { left: -400%; }
+}
+
+/* Slider styles */
+#slider {
+  overflow: hidden;
+}
+
+#slider figure {
+  position: relative;
+  width: 500%;
+  margin: 0;
+  left: 0;
+  text-align: left;
+  font-size: 0;
+  animation: slidy 18s infinite;
+}
+
+#slider img {
+  width: 20%;
+  height: auto;
+  max-height: 75vh;
+  float: left;
+}
+
+/* Gradient background for sections */
+.gradient-bg2 {
+  background: linear-gradient(to left, rgb(255, 238, 169), rgb(255, 191, 120), rgb(255, 125, 41));
+}
+
+/* Mobile menu styles */
+.mobile-menu,
+#mobile-menu {
+  display: none;
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 60%;
+  height: 100%;
+  background: #3c1b02;
+  color: #fff;
+  padding: 1rem;
+  z-index: 20; 
+  flex-direction: column;
+}
+
+.mobile-menu a,
+#mobile-menu a {
+  padding: 1rem;
+  color: #fff;
+  text-align: center;
+  display: block;
+  text-decoration: none;
+}
+
+.mobile-menu a:hover,
+#mobile-menu a:hover {
+  color: #f59e0b; /* Tailwind amber-500 */
+}
+
+.mobile-menu .close-btn,
+#mobile-menu .close-btn {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+/* Responsive styles */
+.card-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.card {
+  display: flex;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 0.5rem;
+  padding: 1rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+.card img {
+  width: 12rem;
+  height: 12rem;
+  border-radius: 9999px;
+  margin-right: 1rem;
+}
+
+.card .details {
+  flex: 1;
+  color: white;
+}
+
+.card .details p {
+  font-size: 1.25rem;
+}
+
+.card .button-container {
+  margin-left: auto;
+}
+
+/* Adjustments for smaller screens */
+@media (max-width: 768px) {
+  .navbar {
+    display: none;
+  }
+
+  .mobile-menu {
+    display: flex;
+  }
+
+  .card-container {
+    margin: 1rem;
+  }
+
+  .card img {
+    width: 8rem;
+    height: 8rem;
+  }
+
+  .card .details p {
+    font-size: 1rem;
+  }
+}
+
+/* adopt me page css */
+/* adopt me page css */
+
+/* Ensure the form overlay stays within the image section */
+.form-overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  pointer-events: auto; /* Allow interactions */
+  z-index: 40; /* Ensure it is above other content but below modal */
+}
+
+/* Ensure the modal content doesn't overlap with the footer */
+.modal {
+  display: none;
+  z-index: 50;
+}

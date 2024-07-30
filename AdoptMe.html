@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adopt Me</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="icon.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body>
+    <div class="flex flex-col min-h-screen">
+        <nav class="bg-amber-600 flex items-center justify-between h-24 px-6 md:px-20 py-5 font-bold fixed w-full z-20">
+            <a href="index.html"><img alt="nav" src="icon.png" class="h-20 mx-5 my-5"></a>
+            <div class="block md:hidden">
+                <button id="menu-button" class="text-white focus:outline-none">
+                    <i class="fas fa-bars fa-2x"></i>
+                </button>
+            </div>
+            <ul id="nav-menu" class="hidden md:flex ml-auto space-x-4 md:space-x-7">
+                <li class="cursor-pointer hover:text-white"><a href="MeetPets.html">Meet Pets</a></li>
+                <li class="cursor-pointer hover:text-white"><a href="SupportUs.html">Support Us</a></li>
+                <li class="cursor-pointer hover:text-white"><a href="DonatePets.html">Donate</a></li>
+                <li class="cursor-pointer hover:text-white"><a href="Sos.html">SOS Report</a></li>
+                <li class="cursor-pointer hover:text-white"><a href="contact.html">Contact Us</a></li>
+            </ul>
+        </nav>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="mobile-menu hidden">
+            <button class="close-btn" id="close-button">
+                <i class="fas fa-times text-white hover:text-orange-500 "></i>
+            </button>
+            <a href="MeetPets.html" class="hover:text-orange-500 text-2xl">Meet Pets</a>
+            <a href="SupportUs.html" class="hover:text-orange-500 text-2xl">Support Us</a>
+            <a href="DonatePets.html" class="hover:text-orange-500 text-2xl">Donate</a>
+            <a href="Sos.html" class="hover:text-orange-500 text-2xl">SOS Report</a>
+            <a href="contact.html" class="hover:text-orange-500 text-2xl">Contact Us</a>
+        </div>
+        
+
+        <!-- Image and Form Container -->
+        <div class="relative flex-grow h-screen mt-24">
+            <img alt="bg-img" src="adoptme.jpg" class="w-full h-full object-cover">
+            <!-- Form Overlay -->
+            <div class="form-overlay absolute inset-0 flex items-center justify-center z-10">
+                <div class="bg-white  bg-opacity-80 rounded-lg p-6 shadow-lg w-11/12 md:w-2/3 lg:w-1/3">
+                    <h2 class="text-5xl md:text-6xl font-bold text-center mb-4 md:mb-6 font-serif animate-pulse">Adopt a Pet</h2>
+                    <form id="adoptForm">
+                        <div class="mb-4">
+                            <label for="name" class="block text-gray-700 font-bold mb-2">Name</label>
+                            <input type="text" id="name" name="name" placeholder="Your Name" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-amber-600" required>
+                        </div>
+                        <div class="mb-4">
+                            <label for="email" class="block text-gray-700 font-bold mb-2">Email</label>
+                            <input type="email" id="email" name="email" placeholder="Your Email" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-amber-600" required>
+                        </div>
+                        <div class="mb-4">
+                            <label for="address" class="block text-gray-700 font-bold mb-2">Address</label>
+                            <input type="text" id="address" name="address" placeholder="Your Address" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-amber-600" required>
+                        </div>
+                        <div class="mb-6">
+                            <label for="phone" class="block text-gray-700 font-bold mb-2">Phone Number</label>
+                            <input type="text" id="phone" name="phone" placeholder="Your Phone Number" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-amber-600" required>
+                        </div>
+                        <div class="flex justify-center">
+                            <button type="submit" class="bg-amber-600 hover:bg-amber-500 text-white font-bold py-2 px-4 rounded-lg">Submit</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- Thank You Modal -->
+        <div id="thankYouModal" class="modal fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center" style="display: none;">
+            <div class="bg-white rounded-lg p-4 text-center">
+                <img src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExem5pN2xsYTYxdWYxZWZhc3NuNTd3dWJ6dzA5Y3QyeGdkaGppMnJuYyZlcD12MV9pbnRlcm5naWZfYnlfaWQmY3Q9Zw/nnZZfXUevHdz27aH7u/giphy.webp" alt="Thank You" class="max-w-xs mx-auto">
+                <div class="mt-4 flex justify-center">
+                    <button onclick="closeModal()" class="bg-amber-600 hover:bg-amber-500 text-white font-bold py-2 px-4 rounded-lg animate-bounce">Close</button>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            document.getElementById('adoptForm').addEventListener('submit', function(event) {
+                event.preventDefault(); // Prevent the default form submission
+                document.getElementById('thankYouModal').style.display = 'flex'; // Show the modal
+            });
+
+            function closeModal() {
+                document.getElementById('thankYouModal').style.display = 'none';
+            }
+        </script>
+
+
+<!-- footer start  -->
+        <footer class="bg-amber-600 mt-auto">
+            <hr class="w-1/2 md:w-1/6 mx-auto border-dotted border-zinc-200 border-4 md:border-6 border-b-0 animate-ping">
+            <h1 class="text-center text-xl md:text-2xl font-bold pt-5">Get in Touch</h1>
+            <div class="flex justify-center space-x-4 text-2xl py-2">
+                <a href="https://instagram.com" class="text-black hover:text-white">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://facebook.com" class="text-black hover:text-white">
+                    <i class="fa-brands fa-facebook"></i>
+                </a>
+                <a href="https://github.com" class="text-black hover:text-white">
+                    <i class="fa-brands fa-github"></i>
+                </a>
+            </div>
+            <p class="text-center py-2 text-sm md:text-base">Copyright © 2024 PetHaven All Rights Reserved.</p>
+        </footer>
+
+        <script>
+            const menuButton = document.getElementById('menu-button');
+            const closeButton = document.getElementById('close-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+        
+            menuButton.addEventListener('click', () => {
+                mobileMenu.style.display = 'flex';
+            });
+        
+            closeButton.addEventListener('click', () => {
+                mobileMenu.style.display = 'none';
+            });
+        </script>
+        
+    </div>
+</body>
+
+</html>
