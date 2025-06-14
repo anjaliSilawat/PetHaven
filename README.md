@@ -1,5 +1,7 @@
 # PetHaven
 
+![Screenshot 2025-06-14 140657](https://github.com/user-attachments/assets/bb6d9f52-f555-4342-a33e-17ade2985347)
+
 
 [PetHaven](https://anjalisilawat.github.io/PetHaven/) is a comprehensive platform designed to support animal welfare. It includes:
 
